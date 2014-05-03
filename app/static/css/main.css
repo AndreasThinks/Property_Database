@@ -58,3 +58,7 @@ html ul.topnav li ul.subnav li a {
 html ul.topnav li ul.subnav li a:hover { /*--Hover effect for subnav links--*/
 	background: #222 url(dropdown_linkbg.gif) no-repeat 10px center;
 }
+
+html {
+    background-color: #7650f2;
+}

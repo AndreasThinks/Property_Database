@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
     <title>Electronic Property Database</title>
 </head>
 <body>
-<script src="jquery-1.11.0.js"></script>
+
+<script type=text/javascript src="{{
+  url_for('static', filename='jquery-1.11.0.js') }}"></script>
 <script>
     $(document).ready(function(){
 
@@ -34,7 +38,7 @@
         <li><a>Home</a></li>
         <li><a>File New Report</a>
         <ul class="subnav">
-            <li><a>Property Lost</a></li>
+            <li><a href={{url_for('lost_report')}}>Property Lost</a></li>
             <li><a>Property Found</a></li>
         </ul>
         </li>
@@ -48,5 +52,6 @@
     </ul>
 </div>
 
+{% block content %}{% endblock %}
 </body>
 </html>
