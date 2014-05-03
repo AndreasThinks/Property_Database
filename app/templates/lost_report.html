@@ -5,14 +5,13 @@
     <form method="POST" name="LostReport">
     Item Description: {{form.description(size=20)}}
     <p class="left_column">
-        Name: {{form.finderName(size=20)}}<br>
+        First Name: {{form.first_name(size=20)}}    Last Name: {{form.last_name(size=20)}}  <br>
         Address: {{form.finderAddress(size=20)}}<br>
         Postcode: {{form.finderPostcode(size=20)}}<br>
 </p>
     <p class="right_column">
         Tel: {{form.finderTel(size=20)}}<br>
         Email: {{form.finderEmail(size=20)}}<br>
-        Police? {{form.finderPolice(size=20)}}<br>
 
     </p>
 
