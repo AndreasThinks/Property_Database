@@ -35,11 +35,11 @@
 </script>
 <div id="menu_bar">
     <ul class="topnav">
-        <li><a>Home</a></li>
+        <li><a href={{url_for('index')}}>Home</a></li>
         <li><a>File New Report</a>
         <ul class="subnav">
             <li><a href={{url_for('lost_report')}}>Property Lost</a></li>
-            <li><a>Property Found</a></li>
+            <li><a href={{url_for('found_report')}}>Property Found</a></li>
         </ul>
         </li>
         <li><a>Search</a>

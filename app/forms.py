@@ -39,7 +39,7 @@ class FoundReport(Form):
     finderAddress = TextField('Loser Address')
     finderEmail = TextField('Loser Email')
     finderPostcode = TextField('Loser Postcode')
-    finderPolice = BooleanField('Police Staff')
+    police = BooleanField('Police Staff')
     itemType = TextField('Item Type')
     itemColour = TextField('Item Colour')
     streetFound = TextField('Street Found')
@@ -48,5 +48,5 @@ class FoundReport(Form):
 
     def __init__(self, *args, **kwargs):
         kwargs['csrf_enabled'] = False
-        super(LostReport, self).__init__(*args, **kwargs)
+        super(FoundReport, self).__init__(*args, **kwargs)
 

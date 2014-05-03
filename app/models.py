@@ -47,3 +47,24 @@ class Types(db.Model):
 
     def __repr__(self):
         return '<Type %r>' % (self.type)
+
+class FoundProp(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    description = db.Column(db.String)
+    type = db.Column(db.String)
+    colour = db.Column(db.String)
+    borough = db.Column(db.String)
+    finder_postcode = db.Column(db.String)
+    street = db.Column(db.String)
+    first_name = db.Column(db.String)
+    last_name = db.Column(db.String)
+    telephone = db.Column(db.String)
+    email = db.Column(db.String)
+    police = db.Column(db.Integer)
+    address = db.Column(db.String)
+    postcode = db.Column(db.String)
+    city = db.Column(db.String)
+    status = db.Column(db.String)
+
+    def __repr__(self):
+        return '<LostProp %r>' % (self.description)

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+        <h1>File New Found Report</h1>
+<p id="form">
+    <form method="POST" name="FoundReport">
+    Item Description: {{form.description(size=20)}}
+    <p class="left_column">
+        First Name: {{form.first_name(size=20)}}    Last Name: {{form.last_name(size=20)}}  <br>
+        Address: {{form.finderAddress(size=20)}}<br>
+        Postcode: {{form.finderPostcode(size=20)}}<br>
+</p>
+    <p class="right_column">
+        Tel: {{form.finderTel(size=20)}}<br>
+        Email: {{form.finderEmail(size=20)}}<br>
+        Police? {{form.police}}<br>
+
+    </p>
+
+    <p class="Item details">
+        Item Type: {{form.itemType(size=20)}}<br>
+        Item Colour: {{form.itemColour(size=20)}}<br>
+        Street Found: {{form.streetFound(size=20)}}<br>
+        Postcode: {{form.postcode(size=20)}}<br>
+        Borough Code: {{form.borough(size=20)}}<br>
+    </p>
+    <input type="submit" value="Submit Report">
+{% endblock %}
