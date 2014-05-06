@@ -23,6 +23,11 @@ class User(db.Model):
 
 class LostProp(db.Model):
     id = db.Column(db.Integer, primary_key = True)
+    hour = db.Column(db.Integer)
+    minute = db.Column(db.Integer)
+    day = db.Column(db.Integer)
+    month = db.Column(db.Integer)
+    year = db.Column(db.Integer)
     description = db.Column(db.String)
     type = db.Column(db.String)
     colour = db.Column(db.String)
@@ -50,6 +55,11 @@ class Types(db.Model):
 
 class FoundProp(db.Model):
     id = db.Column(db.Integer, primary_key = True)
+    hour = db.Column(db.Integer)
+    minute = db.Column(db.Integer)
+    day = db.Column(db.Integer)
+    month = db.Column(db.Integer)
+    year = db.Column(db.Integer)
     description = db.Column(db.String)
     type = db.Column(db.String)
     colour = db.Column(db.String)

@@ -2,6 +2,7 @@ from app import app, db
 from flask import render_template, redirect, request, flash, url_for
 from models import LostProp, FoundProp
 from forms import LostReport, FoundReport
+from datetime import datetime
 
 from flask_login import login_required, logout_user
 
@@ -21,7 +22,8 @@ def index():
 def lost_report():
     form = LostReport()
     if form.validate_on_submit():
-        lost_item = LostProp(description = form.description.data,first_name = form.first_name.data, last_name = form.last_name.data, telephone = form.last_name.data, address = form.finderAddress.data, email = form.finderEmail.data, loser_postcode = form.finderPostcode.data, type = form.itemType.data, colour = form.itemColour.data, street = form.streetFound.data, borough = form.borough.data, postcode = form.postcode.data)
+        current_time = datetime.now()
+        lost_item = LostProp(day=current_time.day, month=current_time.month, year=current_time.year, hour=current_time.hour, minute=current_time.minute, status = "New Lost Report", description = form.description.data,first_name = form.first_name.data, last_name = form.last_name.data, telephone = form.last_name.data, address = form.finderAddress.data, email = form.finderEmail.data, loser_postcode = form.finderPostcode.data, type = form.itemType.data, colour = form.itemColour.data, street = form.streetFound.data, borough = form.borough.data, postcode = form.postcode.data)
         db.session.add(lost_item)
         db.session.commit()
 
@@ -35,7 +37,8 @@ def found_report():
             is_police = 1
         if form.police.data == False:
             is_police = 0
-        found_item = FoundProp(description = form.description.data, police=is_police, first_name = form.first_name.data, last_name = form.last_name.data, telephone = form.last_name.data, address = form.finderAddress.data, email = form.finderEmail.data,  finder_postcode = form.finderPostcode.data, type = form.itemType.data, colour = form.itemColour.data, street = form.streetFound.data, borough = form.borough.data, postcode = form.postcode.data)
+        current_time = datetime.now()
+        found_item = FoundProp(day=current_time.day, month=current_time.month, year=current_time.year, hour=current_time.hour, minute=current_time.minute, status="New Found Report", description = form.description.data, police=is_police, first_name = form.first_name.data, last_name = form.last_name.data, telephone = form.last_name.data, address = form.finderAddress.data, email = form.finderEmail.data,  finder_postcode = form.finderPostcode.data, type = form.itemType.data, colour = form.itemColour.data, street = form.streetFound.data, borough = form.borough.data, postcode = form.postcode.data)
         db.session.add(found_item)
         db.session.commit()
 
